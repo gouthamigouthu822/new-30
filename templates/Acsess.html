@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acsess_rescod</title>
+</head>
+<body>
+    <center>
+        <h1> Acsess insrting</h1>
+        <form  method="POST">
+            {% csrf_token %}
+            <label for="nam">Name</label>
+            <select name="name_As" id="nam">
+                {% for a in two %}
+                <option value="{{a.name}}" id="nam">{{a.name}}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <label for="dd">enter Date</label>
+            <input type="date" name="date_as" id="dd">
+            <br><br>
+
+            <input type="submit" value="Submit">
+
+
+        </form>
+    </center>
+    
+</body>
+</html>

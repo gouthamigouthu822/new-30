@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1> insert web page data</h1>
+        <form method="POST">
+            {% csrf_token %} 
+            <label for="Topic"> select_topic</label>
+            <!-- <select name="Topic_name" id=""></select> -->
+            <select name="Topic_name" id="opiton">
+                <option> select topic name</option>
+                {%  for i in one %}
+                <option value="{{i.Topic_name}}" id="opiton">{{ i.Topic_name }}</option>
+                {% endfor%}
+            </select><br><br>
+            <label for="peru">  Name</label>
+            <input type="text" name="name" id="peru"><br><br>
+            <label for="link"> URL</label>
+            <input type="url" name="url" id="link"><br><br>
+            <input type="submit" value="Submit">
+
+            <br>
+            <br>
+            
+        </form>
+    </center>
+    
+</body>
+</html>
